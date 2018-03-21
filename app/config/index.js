@@ -8,11 +8,16 @@ import ImportAccount from '../views/login/ImportAccount'
 import TermsOfService from '../views/login/TermsOfService'
 import CreateAccountSuccess from '../views/login/CreateAccountSuccess'
 
-import BackUpAccount from '../views/personal/BackUpAccount'
+import BackUpAccount from '../views/backup/BackUpAccount'
+
+
+import Personal from '../views/personal/'
+import ContactService from '../views/personal/ContactService'
+import HelpCenter from '../views/personal/HelpCenter'
+import AccountManage from '../views/personal/AccountManage'
 
 
 import Assets from '../views/home/Assets'
-import Personal from '../views/home/Personal'
 import MsgCenterList from '../views/home/MsgCenterList'
 import Collection from '../views/home/Collection'
 import Payment from '../views/home/Payment'
@@ -39,6 +44,9 @@ export function registerScreens() {
   Navigation.registerComponent('scan_qr_code', () => ScanQrCode)
   Navigation.registerComponent('asset_detail_list', () => AssetDetailList)
   Navigation.registerComponent('trading_record_detail', () => TradingRecordDetail)
+  Navigation.registerComponent('contact_service', () => ContactService)
+  Navigation.registerComponent('help_center', () => HelpCenter)
+  Navigation.registerComponent('account_manage', () => AccountManage)
 
 }
 

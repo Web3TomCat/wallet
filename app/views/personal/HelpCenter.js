@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react'
 import {
   View,
@@ -10,16 +8,16 @@ import {
   ScrollView,
 } from 'react-native'
 
-import { pubS } from '../../styles/'
+import { pubS,DetailNavigatorStyle } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
 
-class BackUpAccount extends Component{
+class HelpCenter extends Component{
   render(){
     return(
       <View>
-        <Text>备份账户</Text>
+        <Text>HelpCenter</Text>
       </View>
     )
   }
 }
-export default BackUpAccount
+export default HelpCenter

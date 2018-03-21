@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {
   View,
@@ -12,13 +11,13 @@ import {
 import { pubS,DetailNavigatorStyle } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
 
-class Personal extends Component{
+class ContactService extends Component{
   render(){
     return(
       <View>
-        <Text>Personal</Text>
+        <Text>ContactService</Text>
       </View>
     )
   }
 }
-export default Personal
+export default ContactService

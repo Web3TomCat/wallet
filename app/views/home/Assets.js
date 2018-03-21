@@ -9,15 +9,9 @@ import {
   FlatList,
 } from 'react-native'
 
-import { pubS,DetailNavigatorStyle } from '../../styles/'
+import { pubS,DetailNavigatorStyle,MainThemeNavColor } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
 
-const MainThemeNavColor = Object.assign({},DetailNavigatorStyle,{
-  navBarTextColor:'#fff',
-  navBarBackgroundColor:'#023193',//主题色
-  statusBarColor:'#023193',
-  statusBarTextColorScheme:'light'
-})
 const DATA = [
   {
     a_type: 'ETZ',

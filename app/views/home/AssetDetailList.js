@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native'
 
-import { pubS,DetailNavigatorStyle } from '../../styles/'
+import { pubS,DetailNavigatorStyle,MainThemeNavColor } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
 import RecordListItem from './tradingRecord/RecordListItem'
 const DATA = [
@@ -37,7 +37,7 @@ class AssetDetailList extends Component{
     this.props.navigator.push({
       screen: 'trading_record_detail',
       title:'交易记录',
-      navigatorStyle: DetailNavigatorStyle,
+      navigatorStyle: MainThemeNavColor,
     })
   }
   renderItem = () => {

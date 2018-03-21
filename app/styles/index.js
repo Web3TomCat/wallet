@@ -13,6 +13,8 @@ const IndexNavStyle = {
   statusBarTextColorScheme: 'light',
   topBarElevationShadowEnabled: false
 }
+
+
 const AssetsNavStyle = {
   tabBarHidden: false,
   navBarTextColor: '#FFFFFF',
@@ -51,7 +53,12 @@ const DetailNavigatorStyle = {
   topBarElevationShadowEnabled: false,
   navBarNoBorder: false
 }
-
+const MainThemeNavColor = Object.assign({},DetailNavigatorStyle,{
+  navBarTextColor:'#fff',
+  navBarBackgroundColor:'#023193',//主题色
+  statusBarColor:'#023193',
+  statusBarTextColorScheme:'light'
+})
 // 隐藏底部 tabs 适用于各个详情页
 const HideTabsDetailStyle = {
   tabBarHidden: true, // 隐藏底部的tabs
@@ -180,9 +187,18 @@ const pubS = {
     paddingTop: scaleSize(20),
     paddingBottom: scaleSize(20)
   },
+  paddingRow40:{
+    paddingLeft: scaleSize(40),
+    paddingRight: scaleSize(40)
+  },
   padding50:{
     paddingLeft: scaleSize(50),
     paddingRight: scaleSize(50)
+  },
+  rowCenter2: {
+    flexDirection:'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   // 居中
   center: {
@@ -254,6 +270,18 @@ const pubS = {
     color:'#FEFEFE',
     fontSize: setScaleText(22)
   },
+  font22_3:{
+    color:'#657CAB',
+    fontSize: setScaleText(22)
+  },
+  font22_4:{
+    color:'#A1A4A8',
+    fontSize: setScaleText(22)
+  },
+  font22_5:{
+    color:'#FF6060',
+    fontSize: setScaleText(22)
+  },
   font24_1:{
     color:'#FF6060',
     fontSize: setScaleText(24)
@@ -268,6 +296,10 @@ const pubS = {
   },
   font24_4:{
     color:'#C7CACF',
+    fontSize: setScaleText(24)
+  },
+  font24_5:{
+    color:'#A1A4A8',
     fontSize: setScaleText(24)
   },
   font26_1:{
@@ -315,6 +347,22 @@ const pubS = {
     color:'#FEFEFE',
     fontSize: setScaleText(30)
   },
+  font32_1:{
+    color:'#2B8AFF',
+    fontSize: setScaleText(32)
+  },
+  font34_1:{
+    color:'#657CAB',
+    fontSize: setScaleText(34)
+  },
+  font34_2:{
+    color:'#000',
+    fontSize: setScaleText(34)
+  },
+  font34_3:{
+    color:'#157EFB',
+    fontSize: setScaleText(34)
+  },
   font36_1:{
     color:'#657CAB',
     fontSize: setScaleText(36)
@@ -326,6 +374,10 @@ const pubS = {
   font36_3:{
     color:'#FFF222',
     fontSize: setScaleText(36)
+  },
+  font60_1:{
+    color:'#657CAB',
+    fontSize: setScaleText(60)
   },
   font72_1:{
     color:'#fff',
@@ -341,4 +393,5 @@ export {
   DrawerStyle,
   TabBarAppStyle,
   AssetsNavStyle,
+  MainThemeNavColor
 }
