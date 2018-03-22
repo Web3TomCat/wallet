@@ -39,8 +39,8 @@ class TradingRecord extends Component{
 
   componentDidMount(){
     Picker.init({
-      pickerConfirmBtnText: '确定',
-      pickerCancelBtnText: '取消',
+      pickerConfirmBtnText: 'Confirm',
+      pickerCancelBtnText: 'Cancel',
       pickerTitleText: '',
       pickerConfirmBtnColor: [21, 126, 251, 1],
       pickerCancelBtnColor: [21, 126, 251, 1],
@@ -70,16 +70,13 @@ class TradingRecord extends Component{
           renderTabBar={() => (
             <ScrollableTabBar
               underlineStyle={[ styles.underlineStyle ]}
-              // activeTextColor={'#2B8AFF'}
-              // inactiveTextColor={'#C7CACF'}
-              // tabBarBackgroundColor={'#fff'}
               style={{backgroundColor:'#023193',height: scaleSize(84)}}
             />
           )}
         >
-            <RecordAll key={1} tabLabel={'全部'}/>
-            <RecordPay key={1} tabLabel={'付款'}/>
-            <RecordCollection key={1} tabLabel={'收款'}/>
+            <RecordAll key={1} tabLabel={'All'}/>
+            <RecordPay key={2} tabLabel={'Send'}/>
+            <RecordCollection key={3} tabLabel={'Receive'}/>
 
         </ScrollableTabView>
       </View>

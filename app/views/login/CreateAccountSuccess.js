@@ -22,7 +22,7 @@ class CreateAccountSuccess extends Component{
       navigatorButtons: {
         rightButtons: [
           {
-            title: '保存',
+            title: 'Save',
             id: 'save_back_up_info'
           }
         ]
@@ -34,12 +34,12 @@ class CreateAccountSuccess extends Component{
       <View style={pubS.container}>
         <View style={{alignItems:'center'}}>
           <Image source={require('../../images/xhdpi/ico_createaccount_succeed.png')} style={styles.imgStyle}/>
-          <Text style={[pubS.font36_1,{marginTop: scaleSize(70)}]}>新账户创建成功</Text>
-          <Text style={[pubS.font26_2,{width:'90%',marginTop: scaleSize(27),textAlign:'center',lineHeight:25,}]}>强烈建议您在使用前做好备份，导出助记词或keystore存储到安全的地方，然后开始尝试转入小额资产启用。</Text>
+          <Text style={[pubS.font36_1,{marginTop: scaleSize(70)}]}>New account has been created successfully </Text>
+          <Text style={[pubS.font26_2,{width:'90%',marginTop: scaleSize(27),textAlign:'center',lineHeight:25,}]}>It is highly recommended that you make backup before use, export mnemonic phrase or keystore and then stored them in a safe place.</Text>
           <Btn
             btnMarginTop={scaleSize(97)}
             btnPress={this.onPressBackUp}
-            btnText={'备份账户'}
+            btnText={'backup account'}
           />
         </View>
       </View>

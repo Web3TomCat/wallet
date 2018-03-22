@@ -12,6 +12,7 @@ import {
 
 import { pubS,DetailNavigatorStyle } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
+import QRCode from 'react-native-qrcode'
 class TextInstructions extends Component{
   static defaultProps = {
     inColor: '#657CAB',
@@ -37,10 +38,10 @@ class TradingRecordDetail extends Component{
     }
   }
   toWebView = () => {
-    alert('打开 webview')
+    alert('open webview')
   }
   onCopyBtn = () => {
-    alert('复制url成功')
+    alert('copy succeeful')
   }
   render(){
     return(
@@ -53,15 +54,15 @@ class TradingRecordDetail extends Component{
             <Text style={[pubS.font22_2,{marginLeft: scaleSize(18),marginTop: scaleSize(28)}]}>etz</Text>
           </View>
           <TextInstructions
-            title={'收款方'}
+            title={'payer'}
             instructions={'0xa2e73fc0addjakdadjaldjladalb4sw1s7ds5d'}
           />
           <TextInstructions
-            title={'收款方'}
+            title={'payee'}
             instructions={'0xa2e73fc0addjakdadjaldjladalb4sw1s7ds5d'}
           />
           <TextInstructions
-            title={'备注'}
+            title={'note'}
             instructions={'合作愉快！'}
           />
 
@@ -69,24 +70,29 @@ class TradingRecordDetail extends Component{
           <View style={[pubS.rowCenterJus,{paddingRight: scaleSize(35)}]}>
             <View>
               <TextInstructions
-                title={'交易号'}
+                title={'transaction number'}
                 instructions={'0xakd2l3...c92skl0w'}
                 inColor={'#2B8AFF'}
                 onPressText={this.toWebView}
                 />
               <TextInstructions
-                title={'区块'}
+                title={'block'}
                 instructions={'5014752'}
                 />
               <TextInstructions
-                title={'交易时间：'}
+                title={'transaction Time'}
                 instructions={'02/12/2018 22:26:27 +0800'}
                 />
             </View>
             <View style={{marginTop: scaleSize(40)}}>
-              <View style={{height: scaleSize(170),width: scaleSize(170),borderWidth:1,}}></View>
+              <QRCode
+                value={'payTotalVal'}
+                size={scaleSize(170)}
+                bgColor='#000'
+                fgColor='#fff'
+              />
               <TouchableOpacity onPress={this.onCopyBtn} activeOpacity={.7} style={[styles.btnStyle,pubS.center]}>
-                <Text style={pubS.font22_2}>复制URL</Text>
+                <Text style={pubS.font22_2}>copy URL</Text>
               </TouchableOpacity>
             </View>
           </View>

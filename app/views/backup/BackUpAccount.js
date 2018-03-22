@@ -28,7 +28,7 @@ class BackUpAccount extends Component{
   onNavigatorEvent(event){
     if (event.type == 'NavBarButtonPress') {
       if (event.id == 'save_back_up_info') {
-        alert('保存')
+        alert('Save')
       }
     }
   }
@@ -68,18 +68,18 @@ class BackUpAccount extends Component{
         <Image source={require('../../images/xhdpi/btn_ico_home_collection_def.png')} style={styles.avateStyle}/>
         <Text style={pubS.font26_5}>{'0x47874587...47sd2sd522'}</Text>
         <View style={[styles.userNameViewStyle,pubS.rowCenterJus,pubS.bottomStyle]}>
-          <Text style={pubS.font26_4}>账户名</Text>
+          <Text style={pubS.font26_4}>wallet name</Text>
           <Text style={pubS.font26_4}>Username</Text>
         </View>
 
         <Btn
           btnPress={this.backUpBnt}
-          btnText={'备份私钥'}
+          btnText={'backup private key'}
           btnMarginTop={scaleSize(317)}
         />
         <Btn
           btnPress={this.deleteAccount}
-          btnText={'删除账户'}
+          btnText={'delete user'}
           btnMarginTop={scaleSize(20)}
           bgColor={'#BDC0C6'}
         />
@@ -92,7 +92,7 @@ class BackUpAccount extends Component{
           backdropOpacity={.8}
         >
           <View style={styles.modalView}>
-            <Text style={[pubS.font34_2,{marginTop: scaleSize(50)}]}>请输入密码</Text>
+            <Text style={[pubS.font34_2,{marginTop: scaleSize(50)}]}>please enter receive password </Text>
             <TextInput
               placeholder={'Password'}
               value={psdVal}
@@ -103,10 +103,10 @@ class BackUpAccount extends Component{
             />
             <View style={[pubS.rowCenter,pubS.topBorderStyle,{height: scaleSize(88),marginTop: scaleSize(25),width: '100%'}]}>
               <TouchableOpacity activeOpacity={.7} onPress={this.onCancelBtn} style={[pubS.center,styles.modalBtnStyle]}>
-                <Text style={pubS.font34_3}>取消</Text>
+                <Text style={pubS.font34_3}>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={.7} onPress={this.onSureBtn} style={[pubS.center,{width:'50%',borderBottomRightRadius:scaleSize(26)}]}>
-                <Text style={pubS.font34_3}>确定</Text>
+                <Text style={pubS.font34_3}>Confirm</Text>
               </TouchableOpacity>
             </View>
           </View>

@@ -54,37 +54,39 @@ class CreateAccount extends Component{
       <View style={pubS.container}>
         <View style={[styles.warningView,pubS.paddingRow_24]}>
           <Text style={pubS.font22_1}>
-            不存储用户密码，无法提供找回或重置功能，密码必须要自己备份好，密码用于加密保护私钥，强度也非常重要。
+            If you don't store user password, you cannot use retrieving or reset function,
+            The password must be backed up by yourself. the password is to protect the private key,
+            so it would be better if it is more complicated.
           </Text>
         </View>
         <View style={{paddingTop:10,}}>
           <TextInputComponent
-            placeholder={'用户名'}
+            placeholder={'wallet name'}
             value={userNmaeVal}
             onChangeText={this.onChangeUseNameText}
-            warningText={'请输入账户名'}
+            // warningText={'please enter the account name'}
           />
           <TextInputComponent
-            placeholder={'密码'}
+            placeholder={'password'}
             value={psdVal}
             onChangeText={this.onChangPsdText}
             secureTextEntry={true}
           />
           <TextInputComponent
-            placeholder={'重复密码'}
+            placeholder={'repeat password'}
             value={repeadPsdVal}
             onChangeText={this.onChangeRepeatText}
             secureTextEntry={true}
           />
           <TextInputComponent
-            placeholder={'密码提示信息(可不填)'}
+            placeholder={'password hint (Optional)'}
             value={promptVal}
             onChangeText={this.onChangePromptText}
           />
           <Btn
             btnMarginTop={scaleSize(60)}
             btnPress={this.onPressBtn}
-            btnText={'创建账户'}
+            btnText={'create'}
           />
         </View>
       </View>
@@ -94,7 +96,7 @@ class CreateAccount extends Component{
 
 const styles = StyleSheet.create({
   warningView:{
-    height: scaleSize(110),
+    height: scaleSize(130),
     backgroundColor:'#FFE186',
     justifyContent:'center',
 

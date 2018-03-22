@@ -375,6 +375,10 @@ const pubS = {
     color:'#FFF222',
     fontSize: setScaleText(36)
   },
+  font54_1:{
+    color:'#fff',
+    fontSize: setScaleText(54)
+  },
   font60_1:{
     color:'#657CAB',
     fontSize: setScaleText(60)

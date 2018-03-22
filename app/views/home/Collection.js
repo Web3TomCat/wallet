@@ -13,12 +13,13 @@ import { pubS,DetailNavigatorStyle } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
 import { TextInputComponent,Btn } from '../../components/'
 import Modal from 'react-native-modal'
-import Toast from 'react-native-root-toast'
+import QRCode from 'react-native-qrcode'
+// import Toast from 'react-native-root-toast'
 class Collection extends Component{
   constructor(props){
     super(props)
     this.state={
-        visible: true,
+        visible: false,
         payTotalVal: '',
         addressText: '0x121212121212121'
     }
@@ -41,10 +42,10 @@ class Collection extends Component{
 
   onPressCopyBtn = () => {
       Clipboard.setString(this.state.addressText)
-      let t1 = Toast.show('复制地址成功~')
-      setTimeout(function () {
-          Toast.hide(t1)
-      }, 3000)
+      // let t1 = Toast.show('复制地址成功~')
+      // setTimeout(function () {
+      //     Toast.hide(t1)
+      // }, 3000)
   }
 
   onHide = () => {
@@ -63,7 +64,7 @@ class Collection extends Component{
       navigatorButtons: {
         rightButtons: [
           {
-            title: '保存',
+            title: 'Save',
             id: 'save_back_up_info'
           }
         ]
@@ -76,18 +77,24 @@ class Collection extends Component{
     return(
       <View style={[pubS.container,{paddingTop: scaleSize(35)}]}>
         <TextInputComponent
-          placeholder={'请输入收款金额(选填)'}
+          placeholder={'Enter receive amount (Optional)'}
           value={payTotalVal}
           onChangeText={this.onChangePayTotal}
         >
         </TextInputComponent>
-        <View style={{height: scaleSize(400),width: scaleSize(400),marginTop: scaleSize(125),borderWidth:1,alignSelf:'center'}}>
 
+        <View style={{marginTop: scaleSize(125),alignSelf:'center'}}>
+          <QRCode
+            value={payTotalVal}
+            size={scaleSize(400)}
+            bgColor='#000'
+            fgColor='#fff'
+          />
         </View>
         <Text style={[pubS.font24_2,{marginTop: scaleSize(19),alignSelf:'center'}]}>{this.state.addressText}</Text>
         <Btn
           btnPress={this.onPressCopyBtn}
-          btnText={'复制收款地址'}
+          btnText={'Copy receiving wallet address'}
           btnMarginTop={scaleSize(100)}
         />
 
@@ -102,22 +109,20 @@ class Collection extends Component{
         <Image source={require('../../images/xhdpi/img_collectionnobackup.png')} style={styles.modalImageStyle}/>
         <View style={[{alignItems:'center'}]}>
             <View style={styles.blueView}>
-                <Text style={[pubS.font36_3,{marginTop: scaleSize(32)}]}>请先备份账户</Text>
+                <Text style={[pubS.font36_3,{marginTop: scaleSize(32)}]}>Please backup your account first</Text>
                 <Text style={[pubS.font22_2,{marginTop: scaleSize(27),width: '75%'}]} numberOfLines={9}>
-                    区块链账户不同于传统网站账户，它是基于密
-                    码学的去中心化账户系统。你必须自己保管好
-                    账户的私钥和交易密码，任何意外发生将会导
-                    致资产丢失。我们建议先做双重备份，再打入
-                    小额测试，最后开始愉快使用。
+                    Blockchain account is different from traditional website account, it is the account of the decentralized system based on cryptography.
+                    You must keep your account's private key and trade password in a safe place.
+                    Any accident may result in assets loss. We suggest to do double backup first and then import small amount for test, finally began to use happily.
                 </Text>
             </View>
             <View style={styles.whileView}>
-                <Text style={[pubS.font30_2,{marginTop: scaleSize(50)}]}>{`--  备份助记词 --`}</Text>
-                <Text style={pubS.font24_2}>丢失账户或密码时，可帮助恢复账户</Text>
-                <Text style={[pubS.font30_2,{marginTop: scaleSize(46)}]}>{`--  备份Keystore文件  --`}</Text>
-                <Text style={pubS.font24_2}>官方账户格式，交易密码保护的私钥文件</Text>
+                <Text style={[pubS.font30_2,{marginTop: scaleSize(50)}]}>{`--  Backup mnemonic words --`}</Text>
+                <Text style={pubS.font24_2}>When lost account or password, mnemonic words can help to restore account</Text>
+                <Text style={[pubS.font30_2,{marginTop: scaleSize(46)}]}>{`--  Backup Keystore file  --`}</Text>
+                <Text style={pubS.font24_2}>Official account format, private key file which protected by transaction password.</Text>
                 <TouchableOpacity activeOpacity={.7} onPress={this.backupBtn} style={[styles.backupBtnStyle,pubS.center]}>
-                  <Text style={pubS.font28_2}>立即备份</Text>
+                  <Text style={pubS.font28_2}>backup now</Text>
                 </TouchableOpacity>
             </View>
       </View>

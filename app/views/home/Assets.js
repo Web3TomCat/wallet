@@ -88,7 +88,7 @@ class Assets extends Component{
   onScan = () => {
     this.props.navigator.push({
       screen: 'scan_qr_code',
-      title:'扫一扫',
+      title:'Scan',
       navigatorStyle: Object.assign({},DetailNavigatorStyle,{
         navBarTextColor:'#fff',
         navBarBackgroundColor:'#000',
@@ -101,21 +101,21 @@ class Assets extends Component{
   onPay = () => {
     this.props.navigator.push({
       screen: 'on_payment',
-      title:'付款',
+      title:'Payment',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
   onCollection = () => {
     this.props.navigator.push({
       screen: 'on_collection',
-      title:'收款',
+      title:'Receive',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
   onTradingRecord = () => {
     this.props.navigator.push({
       screen: 'trading_record',
-      title:'交易记录',
+      title:'Transaction Records',
       navigatorStyle: MainThemeNavColor,
       navigatorButtons: {
         rightButtons: [
@@ -132,26 +132,26 @@ class Assets extends Component{
       <View>
         <View style={[styles.assetsTotalView,pubS.center]}>
             <Text style={pubS.font72_1}>≈110,110,110</Text>
-            <Text style={pubS.font26_3}>总资产(￥)</Text>
+            <Text style={pubS.font26_3}>Total Assets(￥)</Text>
         </View>
 
         <View style={[styles.optionView,pubS.center]}>
             <View style={[pubS.rowCenterJus,{width: scaleSize(650)}]}>
               <TouchableOpacity activeOpacity={.7} onPress={this.onScan} style={[styles.optionItem]}>
                 <Image source={require('../../images/xhdpi/btn_ico_home_scan_def.png')} style={styles.itemImageStyle}/>
-                <Text style={[pubS.font24_2,]}>扫一扫</Text>
+                <Text style={[pubS.font24_2,]}>Scan</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={.7} onPress={this.onPay} style={[styles.optionItem]}>
                 <Image source={require('../../images/xhdpi/btn_ico_home_payment_def.png')} style={styles.itemImageStyle}/>
-                <Text style={[pubS.font24_2,]}>付款</Text>
+                <Text style={[pubS.font24_2,]}>Payment</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={.7} onPress={this.onCollection} style={[styles.optionItem]}>
                 <Image source={require('../../images/xhdpi/btn_ico_home_collection_def.png')} style={styles.itemImageStyle}/>
-                <Text style={[pubS.font24_2,]}>收款</Text>
+                <Text style={[pubS.font24_2,]}>Receive</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={.7} onPress={this.onTradingRecord} style={[styles.optionItem]}>
                 <Image source={require('../../images/xhdpi/btn_ico_home_transactionrecords_def.png')} style={styles.itemImageStyle}/>
-                <Text style={[pubS.font24_2,]}>交易记录</Text>
+                <Text style={[pubS.font24_2,]}>Records</Text>
               </TouchableOpacity>
             </View>
         </View>

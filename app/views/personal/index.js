@@ -16,7 +16,7 @@ class ArrowToDetail extends Component {
     const { arrowText, arrowIcon, arrowOnPress, } = this.props
     return(
       <TouchableOpacity activeOpacity={.7} onPress={arrowOnPress} style={[styles.arrowViewStyle,pubS.rowCenterJus,pubS.paddingRow40,pubS.bottomStyle]}>
-        <View style={pubS.rowCenter}>
+        <View style={[pubS.rowCenter,{}]}>
           <Image source={arrowIcon} style={styles.arrowIconStyle}/>
           <Text style={[pubS.font32_1,{marginLeft: scaleSize(31)}]}>{arrowText}</Text>
         </View>
@@ -32,7 +32,7 @@ class Personal extends Component{
   toAccountManage = () => {
     this.props.navigator.push({
       screen: 'account_manage',
-      title:'账户管理',
+      title:'Manage wallets',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
@@ -40,7 +40,7 @@ class Personal extends Component{
   toHelpCenter = () => {
     this.props.navigator.push({
       screen: 'help_center',
-      title:'帮助中心',
+      title:'Help center',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
@@ -48,7 +48,7 @@ class Personal extends Component{
   toContactService = () => {
     this.props.navigator.push({
       screen: 'contact_service',
-      title:'联系客服',
+      title:'Support',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
@@ -58,18 +58,18 @@ class Personal extends Component{
       <View style={[pubS.container,{backgroundColor:'#F5F7FB',}]}>
           <Image source={require('../../images/xhdpi/bg_personalcenter.png')} style={{height: scaleSize(300),width: scaleSize(750)}}/>
           <ArrowToDetail
-            arrowText={'账户管理'}
+            arrowText={'Manage wallets'}
             arrowIcon={require('../../images/xhdpi/ico_personalcenter_accountmanagement_def.png')}
             arrowOnPress={this.toAccountManage}
           />
           <View style={{marginTop:scaleSize(40)}}>
             <ArrowToDetail
-              arrowText={'帮助中心'}
+              arrowText={'Help center'}
               arrowIcon={require('../../images/xhdpi/ico_personalcenter_helpcenter_def.png')}
               arrowOnPress={this.toHelpCenter}
             />
             <ArrowToDetail
-              arrowText={'联系客服'}
+              arrowText={'Support'}
               arrowIcon={require('../../images/xhdpi/ico_personalcenter_contact_def.png')}
               arrowOnPress={this.toContactService}
             />
@@ -81,8 +81,8 @@ class Personal extends Component{
 
 const styles = StyleSheet.create({
   arrowIconStyle: {
-    height: scaleSize(44),
-    width: scaleSize(48),
+    height: scaleSize(50),
+    width: scaleSize(50),
   },
   arrowViewStyle: {
     height: scaleSize(120),

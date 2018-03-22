@@ -43,31 +43,31 @@ const bottomTabStyle = {
 
 const tabs = [
   {
-    label: '资产',
+    label: 'Assets',
     screen: 'home_assets',
     icon: require('./images/xhdpi/tab_ico_personalcenter_assets_def.png'),
     selectedIcon: require('./images/xhdpi/tab_ico_home_asset_def.png'),
     navigatorStyle: AssetsNavStyle,
     title:'username',
-    navigatorButtons: {
-      rightButtons: [
-        {
-            icon: require('./images/xhdpi/nav_ico_home_more_def.png'),
-            id: 'right_drawer'
-        }
-      ],
-      leftButtons: [
-        {
-          icon: require('./images/xhdpi/nav_ico_home_message_def.png'),
-          id: 'left_drawer'
-        }
-      ]
-    },
+    // navigatorButtons: {
+    //   rightButtons: [
+    //     {
+    //         icon: require('./images/xhdpi/nav_ico_home_more_def.png'),
+    //         id: 'right_drawer'
+    //     }
+    //   ],
+    //   leftButtons: [
+    //     {
+    //       icon: require('./images/xhdpi/nav_ico_home_message_def.png'),
+    //       id: 'left_drawer'
+    //     }
+    //   ]
+    // },
 
     iconInsets: bottomTabStyle
   },
   {
-    label: '我的',
+    label: 'Mine',
     screen: 'home_personal',
     icon: require('./images/xhdpi/tab_ico_home_personalcenter_def.png'),
     selectedIcon: require('./images/xhdpi/tab_ico_personalcenter_personal_def.png'),

@@ -28,7 +28,7 @@ class AccountCard extends Component {
         </View>
         <View style={[styles.cardBottomView,pubS.rowCenterJus]}>
           <View style={[styles.backupBtn,pubS.center]}>
-            <Text style={pubS.font22_5}>请备份</Text>
+            <Text style={pubS.font22_5}>backup</Text>
           </View>
           <View style={pubS.rowCenter}>
             <Text style={pubS.font34_1}>{accountTotal}</Text>
@@ -49,7 +49,7 @@ class AccountManage extends Component{
       navigatorButtons: {
         rightButtons: [
           {
-            title: '保存',
+            title: 'save',
             id: 'save_back_up_info'
           }
         ]
@@ -59,14 +59,14 @@ class AccountManage extends Component{
   createAccountBtn = () => {
     this.props.navigator.push({
       screen: 'create_account',
-      title:'创建账户',
+      title:'create',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
   importAccountBtn = () => {
     this.props.navigator.push({
       screen: 'import_account',
-      title:'导入账户',
+      title:'import',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
@@ -83,10 +83,10 @@ class AccountManage extends Component{
 
       <View style={[{width: '100%',bottom:0,position:'absolute'},pubS.rowCenter]}>
         <TouchableOpacity activeOpacity={.7} onPress={this.createAccountBtn} style={[styles.btnStyle,pubS.center,{backgroundColor:'#2B8AFF'}]}>
-          <Text style={pubS.font30_3}>创建账户</Text>
+          <Text style={pubS.font30_3}>create</Text>
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={.7} onPress={this.importAccountBtn} style={[styles.btnStyle,pubS.center,{backgroundColor:'#2B58FF'}]}>
-          <Text style={pubS.font30_3}>导入账户</Text>
+          <Text style={pubS.font30_3}>import</Text>
         </TouchableOpacity>
       </View>
       </View>

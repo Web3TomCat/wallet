@@ -3,6 +3,7 @@ package com.etzwallet;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -15,6 +16,8 @@ import com.beefe.picker.PickerViewPackage;
 
 import com.reactnativenavigation.NavigationApplication;
 
+import com.bitgo.randombytes.RandomBytesPackage;
+import org.reactnative.camera.RNCameraPackage;
 public class MainApplication extends NavigationApplication {
 
     @Override
@@ -27,7 +30,9 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
-          new PickerViewPackage()
+          new PickerViewPackage(),
+          new RandomBytesPackage(),
+          new RNCameraPackage()
         );
     }
 
@@ -58,7 +63,8 @@ public class MainApplication extends NavigationApplication {
 //     @Override
 //     protected List<ReactPackage> getPackages() {
 //       return Arrays.<ReactPackage>asList(
-//           new MainReactPackage()
+//           new MainReactPackage(),
+            //new RNCameraPackage()
 //       );
 //     }
 //

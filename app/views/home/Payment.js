@@ -11,7 +11,7 @@ import {
 import { pubS,DetailNavigatorStyle } from '../../styles/'
 import { setScaleText, scaleSize } from '../../utils/adapter'
 import { TextInputComponent,Btn } from '../../components/'
-import Toast from 'react-native-root-toast'
+// import Toast from 'react-native-root-toast'
 import Modal from 'react-native-modal'
 class Payment extends Component{
   constructor(props){
@@ -59,7 +59,7 @@ class Payment extends Component{
   toScan = () => {
     this.props.navigator.push({
       screen: 'scan_qr_code',
-      title:'扫一扫',
+      title:'Scan',
       navigatorStyle: Object.assign({},DetailNavigatorStyle,{
         navBarTextColor:'#fff',
         navBarBackgroundColor:'#000',
@@ -69,10 +69,10 @@ class Payment extends Component{
     })
   }
   toMoreCion = () => {
-    let t1 = Toast.show('尽请期待~')
-    setTimeout(function () {
-        Toast.hide(t1)
-    }, 1000)
+    // let t1 = Toast.show('尽请期待~')
+    // setTimeout(function () {
+    //     Toast.hide(t1)
+    // }, 1000)
   }
   onPressClose = () => {
     this.setState({
@@ -90,7 +90,7 @@ class Payment extends Component{
     }else{
       this.setState({
         modalSetp1: true,
-        modalTitleText:'支付详情',
+        modalTitleText:'Payment details',
         modalTitleIcon: require('../../images/xhdpi/nav_ico_paymentdetails_close_def.png'),
       })
     }
@@ -98,7 +98,7 @@ class Payment extends Component{
 
   onPressOrderModalBtn = () => {
     this.setState({
-      modalTitleText: '支付密码',
+      modalTitleText: 'Payment password',
       modalTitleIcon: require('../../images/xhdpi/nav_ico_createaccount_back_def.png'),
       modalSetp1: false
     })
@@ -122,28 +122,28 @@ class Payment extends Component{
           toMore={true}
         />
         <TextInputComponent
-          placeholder={'收款人账户地址'}
+          placeholder={'receiver’s account address'}
           value={payAddressVal}
           onChangeText={this.onChangePayAddrText}
-          //warningText={'请输入账户地址'}
+          //warningText={'please enter the account address'}
           isScan={true}
           onPressIptRight={this.toScan}
         />
         <TextInputComponent
-          placeholder={'付款金额'}
+          placeholder={'payment amount'}
           value={payTotalVal}
           onChangeText={this.onChangePaTotalText}
-          //warningText={'请输入付款金额'}
+          //warningText={'please enter the payment amount'}
         />
         <TextInputComponent
-          placeholder={'备注'}
+          placeholder={'backup'}
           value={noteVal}
           onChangeText={this.onChangeNoteText}
         />
         <Btn
           btnMarginTop={scaleSize(230)}
           btnPress={this.onNextStep}
-          btnText={'下一步'}
+          btnText={'Next step'}
         />
 
         <Modal
@@ -164,40 +164,40 @@ class Payment extends Component{
               modalSetp1 ?
               <View>
                 <RowText
-                rowTitle={'订单信息'}
-                rowContent={'付款'}
+                rowTitle={'Order information'}
+                rowContent={'Payment'}
                 />
                 <RowText
-                rowTitle={'转入地址'}
+                rowTitle={'transfer wallet address'}
                 rowContent={'12345'}
                 />
                 <RowText
-                rowTitle={'付款账户'}
+                rowTitle={'Payment account'}
                 rowContent={'12345'}
                 />
                 <RowText
-                rowTitle={'金额'}
+                rowTitle={'Amount'}
                 rowContent={'100'}
                 rowUnit={'ETZ'}
                 />
 
                 <Btn
                 btnPress={this.onPressOrderModalBtn}
-                btnText={'确认'}
+                btnText={'Confirm'}
                 btnMarginTop={scaleSize(50)}
                 />
               </View>
               :
               <View>
                 <TextInputComponent
-                  placeholder={'输入密码'}
+                  placeholder={'Enter password'}
                   value={payPsdVal}
                   onChangeText={this.onChangePayPsdText}
-                  //warningText={'请输入付款金额'}
+                  //warningText={'please enter the payment amount'}
                 />
                 <Btn
                   btnPress={this.onPressPayBtn}
-                  btnText={'支付'}
+                  btnText={'Make Payment'}
                   btnMarginTop={scaleSize(50)}
                 />
               </View>

@@ -15,7 +15,7 @@ class MsgCenterList extends Component{
   render(){
     return(
       <View>
-        <Text>消息中心</Text>
+        <Text>Message Center</Text>
       </View>
     )
   }

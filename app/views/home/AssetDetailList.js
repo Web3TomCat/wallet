@@ -36,7 +36,7 @@ class AssetDetailList extends Component{
   toTradingRecordDetail = () => {
     this.props.navigator.push({
       screen: 'trading_record_detail',
-      title:'交易记录',
+      title:'Transaction Records',
       navigatorStyle: MainThemeNavColor,
     })
   }
@@ -61,14 +61,14 @@ class AssetDetailList extends Component{
   payBtn = () => {
     this.props.navigator.push({
       screen: 'on_payment',
-      title:'付款',
+      title:'Payment',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
   collectBtn = () => {
     this.props.navigator.push({
       screen: 'on_collection',
-      title:'收款',
+      title:'Receive',
       navigatorStyle: DetailNavigatorStyle,
     })
   }
@@ -83,10 +83,10 @@ class AssetDetailList extends Component{
         />
         <View style={[styles.bottomBtnStyle,pubS.rowCenter]}>
           <TouchableOpacity activeOpacity={.7} onPress={this.payBtn} style={[styles.btnStyle,{backgroundColor:'#FFAA3B'},pubS.center]}>
-            <Text style={pubS.font30_3}>付款</Text>
+            <Text style={pubS.font30_3}>Payment</Text>
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={.7} onPress={this.collectBtn} style={[styles.btnStyle,{backgroundColor:'#FF9844'},pubS.center]}>
-            <Text style={pubS.font30_3}>收款</Text>
+            <Text style={pubS.font30_3}>Receive</Text>
           </TouchableOpacity>
         </View>
       </View>

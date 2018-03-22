@@ -74,33 +74,33 @@ class Privatekey extends Component{
       <View>
         <TextInputComponent
           isMultiline={true}
-          placeholder={'明文私钥'}
+          placeholder={'Import Private Key'}
           value={privKey}
           onChangeText={this.onChangePrivateText}
-          warningText={'私钥有误'}
+          // warningText={'Wrong Private Key'}
           iptMarginTop={scaleSize(60)}
         />
         <TextInputComponent
-          placeholder={'密码'}
+          placeholder={'password'}
           value={psdVal}
           onChangeText={this.onChangPsdText}
           secureTextEntry={true}
         />
         <TextInputComponent
-          placeholder={'重复密码'}
+          placeholder={'repeat password'}
           value={repeadPsdVal}
           onChangeText={this.onChangeRepeatText}
           secureTextEntry={true}
         />
         <TextInputComponent
-          placeholder={'密码提示信息(可不填)'}
+          placeholder={'password hint (Optional)'}
           value={promptVal}
           onChangeText={this.onChangePromptText}
         />
         <Btn
           btnMarginTop={scaleSize(60)}
           btnPress={this.onPressImport}
-          btnText={'导入账户'}
+          btnText={'import'}
         />
       </View>
     )
@@ -129,7 +129,7 @@ class ImportAccount extends Component{
             />
           )}
         >
-            <Privatekey key={1} tabLabel={'私钥'} thisProps={this}/>
+            <Privatekey key={1} tabLabel={'private key'} thisProps={this}/>
         </ScrollableTabView>
       </View>
     )

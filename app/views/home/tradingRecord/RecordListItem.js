@@ -35,7 +35,7 @@ class RecordListItem extends Component{
             <Text style={{fontSize: setScaleText(28),color:moneyTextColor}}>{'-100HTZ'}</Text>
             {
               payFail ?
-              <Text style={pubS.font24_1}>付款失败</Text>
+              <Text style={pubS.font24_1}>Pay Fail</Text>
               : null
             }
           </View>
